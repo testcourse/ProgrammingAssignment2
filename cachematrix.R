@@ -3,6 +3,8 @@
 
 ## Write a short comment describing this function
 
+## This function will create a special R object that store a matrix and cache its inversion 
+
 makeCacheMatrix <- function(x = matrix()) {
 	m <- NULL
 	set <- function(y){
@@ -10,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
 		m <<- NULL
 	}
 	get <- function() x
-	setsolve <- function(solve) m <<- mean
+	setsolve <- function(solve) m <<- solve
 	getsolve <- function() m
 	list(set = set, get = get, setsolve = setsolve, getsolve = getsolve)
 
@@ -18,6 +20,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
+
+## This function can return the inversion. If the inversion is calculated previously, this function will return the cached inversion rather than calculate it again 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
